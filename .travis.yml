@@ -36,6 +36,3 @@ after_success:
   - docker push $DOCKER_USERNAME/udagram-api-user:v4a
   - docker push $DOCKER_USERNAME/udagram-reverse-proxy:v4a
   - docker push $DOCKER_USERNAME/udagram-frontend:local
-  # Fire up the docker-compose file
-  - docker-compose up
-
