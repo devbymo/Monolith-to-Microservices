@@ -2,7 +2,7 @@ version: "3"
 services:
   reverseproxy:
     build:
-      context: ./udagram-reverseproxy
+      context: ./udagram-reverse-proxy
     image: reverseproxy:v4a
   api_user:
     build:
