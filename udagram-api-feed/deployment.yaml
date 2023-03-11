@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-api-feed
+  name: udagram-api-feed
+spec:
+  selector:
+    matchLabels:
+      service: udagram-api-feed
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        service: udagram-api-feed
+    spec:
+      containers:
+      - image: omarzztelcocloud/udagram-api-feed:v5
+        name: udagram-api-feed
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        envFrom:
+          - secretRef:
+              name: envsecret
+          - configMapRef:
+              name: envconfigmap
+
+

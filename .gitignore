@@ -40,3 +40,9 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+env.sh
+
+# Local ignore
+udagram-api-feed-v0
+udagram-api-user-v0
