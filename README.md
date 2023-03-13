@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/Mohamed475/Monolith-to-Microservices.svg?branch=main)](https://app.travis-ci.com/Mohamed475/Monolith-to-Microservices)
+
 # Udagram Image Filtering Application
 
 Refactor the monolith application to microservices + create fully automated CI/CD pipeline using Travis CI, Docker, Kubernetes (AWS EKS), reverse proxy (NginX), Logging and tracing system
