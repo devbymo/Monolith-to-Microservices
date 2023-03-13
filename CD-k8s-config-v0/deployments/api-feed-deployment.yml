@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-api-feed
+  name: udagram-api-feed
+spec:
+  selector:
+    matchLabels:
+      service: udagram-api-feed
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        service: udagram-api-feed
+    spec:
+      containers:
+      - image: iammo9/udagram-api-feed:v4a
+        name: udagram-api-feed
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        envFrom:
+          - secretRef:
+              name: env-secret
+          - configMapRef:
+              name: env-configmap
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"
+      restartPolicy: Always
+      ports:
+      - containerPort: 8080
+        

@@ -46,5 +46,4 @@ env.sh
 # Local ignore
 udagram-api-feed-v0
 udagram-api-user-v0
-CD-k8s-config
-CD-k8s-config-dummy/
+

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-frontend
+  name: udagram-frontend
+spec:
+  selector:
+    matchLabels:
+      service: udagram-frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: udagram-frontend
+    spec:
+      containers:
+      - image: iammo9/udagram-frontend:v4a
+        name: udagram-frontend
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"       
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
