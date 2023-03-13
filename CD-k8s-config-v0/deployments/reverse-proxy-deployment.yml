@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-reverse-proxy
+  name: udagram-reverse-proxy
+spec:
+  selector:
+    matchLabels:
+      service: udagram-reverse-proxy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: udagram-reverse-proxy
+    spec:
+      containers:
+      - image: iammo9/udagram-reverse-proxy:v4a
+        name: udagram-reverse-proxy
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: udagram-api-user
+  name: udagram-api-user
+spec:
+  selector:
+    matchLabels:
+      service: udagram-api-user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: udagram-api-user
+    spec:
+      containers:
+      - image: iammo9/udagram-api-user:v4a
+        name: udagram-api-user
+        envFrom:
+          - configMapRef:
+              name: env-configmap
+          - secretRef:
+              name: env-secret
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"        
+        ports:
+        - containerPort: 8080
+
+
