@@ -27,7 +27,7 @@
     "@ionic/cli": "^6.16.3",
     "core-js": "^2.5.4",
     "fsevents": "^2.3.2",
-    "rxjs": "~6.5.4",
+    "rxjs": "~6.6.7",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
