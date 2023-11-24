@@ -13,7 +13,7 @@ The project is split into two parts:
 
 - Kubernetes (K8s) AWS Elastic Kubernetes Service (EKS) - Container Orchestration
 - Docker - Containerization
-- Ngix - Reverse Proxy
+- Nginx - Reverse Proxy
 - AWS S3 - Image Storage
 - AWS RDS - Database
 - Full logging & monitoring system (For both backend and frontend)
