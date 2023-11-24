@@ -28,7 +28,7 @@
     "core-js": "^2.5.4",
     "fsevents": "^2.3.2",
     "rxjs": "~6.5.4",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.14.1"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
